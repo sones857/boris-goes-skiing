@@ -52,6 +52,7 @@ void setup()
 {
   //arduboy.begin();
   arduboy.boot();
+  arduboy.flashlight();
   arduboy.blank();
   arduboy.audio.on();
   Serial.begin(9600);
