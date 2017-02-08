@@ -1,11 +1,9 @@
 /*
   To do list:
-
-    Get boris to stand still until buttons are pressed, too difficault to control as it is
-    Move lives over (only half is on screen) and remove text (takes up too much screen space)
     Add sound for -- tree hit, point scored,
-    Add high score to memory
-    Figure out what is making boris vanish on left button (check borisleft) + button presses
+    Add high score to memory and title screen
+    Figure out what is making boris vanish when left button is pressed several times.
+    When game over, go back to title screen.
 
 */
 
@@ -21,7 +19,7 @@ ArduboyTones sound(arduboy.audio.enabled);
 
 int borisX = 56;
 int borisY = 5;
-byte lives = 3;
+byte lives = 5;
 byte borisDirection = 2;
 // 0=left    1=diag left    2=down    3=diag right    4=right
 int speed = 0;
