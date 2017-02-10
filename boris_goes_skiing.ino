@@ -1,10 +1,10 @@
 /*
   To do list:
-
-    Get boris to stand still until buttons are pressed, too difficault to control as it is
-    Move lives over (only half is on screen) and remove text (takes up too much screen space)
-    Add sound for -- tree hit, point scored,
+  
+    Get game to return to titlescreen after boris dies
+    
     Add high score to memory
+    
     Figure out what is making boris vanish on left button (check borisleft) + button presses
 
 */
