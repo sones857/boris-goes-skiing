@@ -1,0 +1,241 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "info.json included in a .arduboy file",
+  "description": "Contents of the info.json file included in a .arduboy file, used by manager and loader programs to upload .arduboy files to an Arduboy gaming system.",
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "default": 2,
+      "minimum": 2,
+      "maximum": 2,
+      "title": "Schema version",
+      "description": "The schema version which the info.json complies with. This schema is version 2"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "title": "Title",
+      "description": "A title for everything contained within this .arduboy file."
+    },
+    "description": {
+      "type": "string",
+      "title": "Description",
+      "description": "A description of for everything contained within this .arduboy file."
+    },
+    "author": {
+      "type": "string",
+      "minLength": 1,
+      "title": "Author",
+      "description": "The author of the .arudboy file. Multiple authors can be named in the same string."
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1,
+      "title": "Version",
+      "description": "The release version of this .arduboy file."
+    },
+    "date": {
+      "type": "string",
+      "anyOf": [
+        { "format": "date" },
+        { "format": "date-time" }
+      ],
+      "title": "Date and time",
+      "description": "The date and (optional) time of release, in ISO 8601 format. E.g. 2017-02-23 or 2017-02-23T22:15:45Z"
+    },
+    "genre": {
+      "type": "string",
+      "enum": [
+        "Puzzle", "Shooter", "Application", "Demo", "Action", "Arcade",
+        "Platformer", "RPG", "Racing", "Sports", "Misc"
+      ],
+      "title": "Genre",
+      "description": "The type of game or .arduboy file. It must be one of the following: Puzzle, Shooter, Application, Demo, Action, Arcade, Platformer, RPG, Racing, Sports, Misc."
+    },
+    "publisher": {
+      "type": "string",
+      "title": "Publisher",
+      "description": "The person(s) or group in charge of publishing the .arduboy file."
+    },
+    "idea": {
+      "type": "string",
+      "title": "Idea",
+      "description": "The person(s) who created the idea behind the .arduboy file."
+    },
+    "code": {
+      "type": "string",
+      "title": "Code developer",
+      "description": "The developer(s) of the .arduboy file's source code."
+    },
+    "art": {
+      "type": "string",
+      "title": "Artist",
+      "description": "The person(s) who created any artwork in the .arduboy file."
+    },
+    "sound": {
+      "type": "string",
+      "title": "Sound composer",
+      "description": "The person(s) who created the music and other sounds in the .arduboy file."
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "title": "URL for more information",
+      "description": "The URL of a web page for the .arduboy file, which can include more info or whatever the author wishes."
+    },
+    "sourceUrl": {
+      "type": "string",
+      "format": "uri",
+      "title": "Source code URL",
+      "description": "The URL of a site where the source code for this .arduboy file is available."
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "Email address for support",
+      "description": "An email address that can be used to contact the author(s) for help, support or more information."
+    },
+    "companion": {
+      "type": "string",
+      "format": "uri",
+      "title": "Companion program URL",
+      "description": "The URL for a companion program that runs on a PC or other device which may be used or required by this .arduboy file, such as a serial transfer program."
+    },
+    "banner": {
+      "type": "string",
+      "minLength": 1,
+      "title": "Banner filename",
+      "description": "The filename of the image to be used for a banner displayed by loader programs. This must be a PNG/BMP/JPG/GIF file 700px wide by 192px high. The file must be included in the .arduboy file."
+    },
+    "screenshots": {
+      "type": "array",
+      "title": "Screenshots",
+      "description": "The filenames and descriptions of screenshots to be displayed by loader programs. Screenshots must be PNG/BMP/JPG/GIF files 128px wide by 64px high and black and white only. These files must be included in the .arduboy file.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "title": "Screenshot file",
+        "description": "The filename and title of a screenshot",
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title",
+            "description": "The title or a short description of the screenshot."
+          },
+          "filename": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Filename",
+            "description": "The filename of the screenshot."
+          }
+        },
+        "required": [
+          "filename"
+        ]
+      }
+    },
+    "binaries": {
+      "type": "array",
+      "title": "Loadable files",
+      "description": "The filenames and descriptions of the files containing the compiled code to be uploaded to an Arduboy. These files must be included in the .arduboy file. Multiple files can be included to provide separate versions compiled for the production Arduboy and the DevKit, and/or to provide more than one set of levels, chapters, versions with different difficulty, etc.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "title": "Arduboy binary file",
+        "description": "The filename, description and target device for a loadable file.",
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title",
+            "description": "The title or short description of the file."
+          },
+          "filename": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Filename",
+            "description": "The filename of the loadable file"
+          },
+          "device": {
+            "type": "string",
+            "enum": [ "Arduboy", "DevKit" ],
+            "title": "Device",
+            "description": "The type of Arduboy that the code has been compiled for. This must be either Arduboy or DevKit."
+          }
+        },
+        "required": [
+          "filename",
+          "device"
+        ]
+      }
+    },
+    "buttons": {
+      "type": "array",
+      "title": "Button usage",
+      "description": "Descriptions of the actions that each button or button sequence performs to control the game/app.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "title": "Button action performed",
+        "description": "A button or button sequence and the action it performs.",
+        "properties": {
+          "control": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Button or button sequence",
+            "description": "This can be a single button name such as 'A' or 'Up', more than one button such as 'A or B' or 'D-Pad', or a more detailed sequence such as 'A + B' or 'B while jumping'."
+          },
+          "action": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Action performed",
+            "description": "A description of the action performed by the specified button or button sequence such as 'Fire weapon' or 'Move character'."
+          }
+        },
+        "required": [
+          "control",
+          "action"
+        ]
+      }
+    },
+    "eeprom": {
+      "type": "object",
+      "title": "EEPROM usage",
+      "description": "The EEPROM area used.",
+      "properties": {
+        "variable": {
+          "type": "boolean",
+          "title": "Location is variable",
+          "description": "If set to 'true' it indicates that the EEPROM area used will vary. For instance, the sketch may search for and then use a free area if it determines that an area hasn't previously been allocated. The start and end values must be set to include the entire possible area that could be used."
+        },
+        "start": {
+          "type": "integer",
+          "multipleOf": 1,
+          "minimum": 16,
+          "maximum": 1023,
+          "title": "Start address",
+          "description": "A number which specifies the first EEPROM address used. It must be between 16 and 1023 and less than or equal to the end address."
+        },
+        "end": {
+          "type": "integer",
+          "multipleOf": 1,
+          "minimum": 16,
+          "maximum": 1023,
+          "title": "End address",
+          "description": "A number which specifies the last EEPROM address used. It must be between 16 and 1023 and greater than or equal to the start address."
+        }
+      },
+      "required": [
+        "start",
+        "end"
+      ]
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "title",
+    "author",
+    "version",
+    "binaries"
+  ]
+}
