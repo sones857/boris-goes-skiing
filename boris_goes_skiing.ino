@@ -15,7 +15,7 @@ int gameState = 0;
 int borisX = 56;
 int borisY = 5;
 byte lives = 3;
-byte borisDirection = 2;
+char borisDirection = 2;
 // 0=left    1=diag left    2=down    3=diag right    4=right
 int speed = 0;
 int score = 0;
@@ -73,13 +73,13 @@ void checkButtons()
   if (arduboy.pressed(LEFT_BUTTON))
   {
     borisDirection--;
-    if (borisDirection < 1) borisDirection = 1; // values should be zero, workaround to stop Boris vanishing on repeated left button press
+    if (borisDirection < 0) borisDirection = 0; 
   }
 
   if (arduboy.pressed(RIGHT_BUTTON))
   {
     borisDirection++;
-    if (borisDirection > 3) borisDirection = 3;
+    if (borisDirection > 4) borisDirection = 4;
   }
   keyPress = millis();
 }
