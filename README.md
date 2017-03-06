@@ -8,3 +8,7 @@ Title screen will show until the "A" button is pressed, then the game will start
 start with 3 lives
 Tree hit = loose a life.
 Flag pass = get a point.
+
+Hold up on power up to switch on torch
+Hold "B" on power up then up for sound on
+Hold "B" on power up then down for sound off
