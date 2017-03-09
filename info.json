@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 2,
+  "title": "Boris goes skiing",
+  "description": "A clone of the ZX Spectrum game Horace goes skiing for the Arduboy",
+  "author": "Tom Sparrow",
+  "version": "1.0",
+  "date": "2017-03-08",
+  "genre": "Arcade",
+  "publisher": "Tom Sparrow",
+  "code": "Tom Sparrow",
+  "art": "Mike McRoberts & Tom Sparrow",
+  "sound": "Tom Sparrow",
+  "testers": "Erin and Sonny",
+  "sourceUrl": "https://github.com/sones857/boris-goes-skiing",
+  "banner": "boris_banner.PNG",
+  "screenshots": [
+    {
+      "title": "screenshot1.PNG",
+      "filename": "screenshot1.PNG"
+    },
+  ],
+  "binaries": [
+    {
+      "title": "boris_goes_skiing_binary",
+      "filename": "boris_goes_skiing.ino.leonardo.hex",
+      "device": "Arduboy"
+    }
+  ],
+  "eeprom": {
+    "variable": false,
+    "start": 593,
+    "end": 593
+  }
+}
