@@ -169,7 +169,7 @@ void gameOver()
   arduboy.print("High Score: ");
   arduboy.print(highScore);
   arduboy.display();
-  delay(4000);
+  delay(6000);
   gameState = 0;
   arduboy.clear();
   score = 0;
