@@ -19,7 +19,7 @@
 	}],
 	"binaries": [{
 		"title": "boris_goes_skiing_binary",
-		"filename": "boris_goes_skiing.ino.leonardo.hex",
+		"filename": "boris_goes_skiing.ino.hex",
 		"device": "Arduboy"
 	}],
 	"eeprom": {
