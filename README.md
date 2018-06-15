@@ -1,6 +1,6 @@
 # boris-goes-skiing
 
-Boris goes skiing for the Arduboy, a clone of the ZX Spectrum game "Horace goes skiing" 
+Boris goes skiing,game for the Arduboy, a clone of the ZX Spectrum game "Horace goes skiing" 
 
 Controls:
 
